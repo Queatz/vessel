@@ -53,6 +53,33 @@ print ('starting %s' % config.app-name)
 # prints 'starting My Awesome App'
 ```
 
+## Basic Template
+
+#### app.v
+```
+:system
+
+app {
+  run {
+    system print 'hello'
+  }
+}
+
+app[] run
+```
+This is a basic app entry point template.  Since scope lookup is allowed to fall outside the file, this could have been written in one line:
+
+```
+system print 'hello'
+```
+
+`system` would not be found in the file and would be looked up using the following precedence:
+
+1. File or folder called `system` in the same folder
+2. File or folder called `system` in the system vessel include path
+3. Package from the Vessel CDN called `system` (which would then be cached locally)
+
+
 ## Syntax
 
 Vessel files are anonymous scopes. Usually you would define a single class within a `.v` file.
@@ -212,38 +239,71 @@ pine tree material {
 
 This is multiple class inheritence.  Again, simple and clean.
 
-## Functions
+## Operators and Logic
 
-Now that we have some classes, let's go ahead and use them.
+Operators, or more traditionally, functions, are simply scope blocks.  They can live as methods of classes or passed around anonymously.
 
-#### app.v
 ```
-:system
-
-app {
-  run {
-    system print 'hello'
-  }
+fish {
+  name string
 }
 
-app[] run
+bucket {
+  fishies list
+  
+  + fish { contents append .., . }
+  
+  + bucket {
+    .. each { contents append .. }
+    .
+  }
+}
 ```
-This is a basic app entry point template.  Since scope lookup is allowed to fall outside the file, this could have been written in one line:
 
 ```
-system print 'hello'
+rosie: fish['rosie']
+goldie: fish['goldie']
+pinky: fish['pinky']
+
+beckys-fishies: bucket[contents: [rosie]]
+mandys-fishies: bucket[[goldie]]
+
+all-fishies: beckys-fishies + mandys-fishes
+all-fishies + pinky
+
+system print | all-fishies size
+# 3
 ```
-
-`system` would not be found in the file and would be looked up using the following precedence:
-
-1. File or folder called `system` in the same folder
-2. File or folder called `system` in the system vessel include path
-3. Package from the Vessel CDN called `system` (which would then be cached locally)
-
-## Logic
-
 
 ## Standard Library
 
+### object
 
-## Logic
+The base from which all things are.
+
+### list
+
+A list of objects
+
+### map
+
+A map of keys and objects
+
+### string
+
+A string
+
+### number
+
+A number.
+
+ * integer
+ * float
+ * double
+ * long
+
+## Additional Notes
+
+Extending the Vessel language is also easy.  It is written in C++.  Check [this page](wiki) for more information.
+
+And thanks!  We hope you enjoyed the read. <3
