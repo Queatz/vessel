@@ -1,6 +1,6 @@
 # Vessel
 
-Vessel is a new way of thinking.  It disbands traditional programming language paradigms in favor of exploring something refreshingly new.  Take it for a spin, we think you'll like it.
+Vessel is a new way of thinking.  It disbands traditional programming language paradigms in favor of exploring something new.  Take it for a spin, we think you'll like it.
 
 ## Thinking in Vessel
 
@@ -29,92 +29,6 @@ Vessel is easy. Designed with writing sentances in mind, it flows unobstructed f
 !!   loop
 '    string literal
 #    comment
-```
-
-## Project Structure
-
-Vessel files end in `.v`. You can access other vessel files in various ways by assigning to the file itself, optionally specifying a name.
-
-#### config.v
-```
-config {
-  app-name 'My Awesome App'
-}
-```
-
-#### app.v
-```
-:config
-:system.print
-:..relative
-snapp-http-server:'https://github.com/SnappLab/snapp-http-server'
-
-print ('starting %s' % config.app-name)
-# prints 'starting My Awesome App'
-```
-
-## Basic Template
-
-#### app.v
-```
-:system
-
-app {
-  run {
-    system print 'hello'
-  }
-}
-
-app[] run
-```
-This is a basic app entry point template.  Since scope lookup is allowed to fall outside the file, this could have been written in one line:
-
-```
-system print 'hello'
-```
-
-`system` would not be found in the file and would be looked up using the following precedence:
-
-1. File or folder called `system` in the same folder
-2. File or folder called `system` in the system vessel include path
-3. Package from the Vessel CDN called `system` (which would then be cached locally)
-
-
-## Syntax
-
-Vessel files are anonymous scopes. Usually you would define a single class within a `.v` file.
-
-Vessel files are meant to be easy on the eyes with the possibility to minify.  Commas indicate separate statements.  Newlines also indicate separate statements, except when an "indetation block" is opened.
-
-These are all the same
-```
-a, b, c
-
-a
-b, c
-
-a, b
-c
-
-a
-b
-c
-```
-
-These are also the same:
-```
-a b c
-
-a
-  b
-  c
-
-a b
-  c
-
-a
-  b
-    c
 ```
 
 ## Expressions
@@ -158,7 +72,6 @@ Gluing and separating is especially useful when you want to reverse the order of
 a|b c  
 a b | c
 ```
-
 
 ## Classes
 
@@ -239,40 +152,96 @@ pine tree material {
 
 This is multiple class inheritence.  Again, simple and clean.
 
-## Operators and Logic
+## Logic and Scope
 
-Operators, or more traditionally, functions, are simply scope blocks.  They can live as methods of classes or passed around anonymously.
+Scopes are defined with braces `{ }`. Vessel files are anonymous scopes.
 
+### If / Then / Else
+
+b if a
 ```
-fish {
-  name string
-}
+a ? b
+```
 
-bucket {
-  fishies list
+b if a else c
+```
+a ? b ?? c
+```
+
+b if a else d if c
+```
+a ? b ?? c ? d
+```
+
+b if a else d if c else e
+```
+a ? b ?? c ? d ?? e
+```
+
+A practical if block might look like:
+```
+success ? {
   
-  + fish { contents append .., . }
-  
-  + bucket {
-    .. each { contents append .. }
-    .
-  }
+} ?? {
+
 }
 ```
 
+Another example, if you only need a false conditional block:
 ```
-rosie: fish['rosie']
-goldie: fish['goldie']
-pinky: fish['pinky']
+success ?? {
+  system print 'error'
+} 
+```
 
-beckys-fishies: bucket[contents: [rosie]]
-mandys-fishies: bucket[[goldie]]
+### Looping
 
-all-fishies: beckys-fishies + mandys-fishes
-all-fishies + pinky
+Vessel favors loop and stop commands over blocks.
 
-system print | all-fishies size
-# 3
+```
+[1, 2, 3] each {
+
+}
+```
+
+Here, the elements are iterated in an object-oriented fashion.
+
+
+```
+{
+  alive ?? ! 
+  
+  system print 'alive'
+
+  !!
+}
+```
+
+Here we are using the loop command `!!` to return to the beginning of the block.  We check and break at the beginning because we don't want this block running at all if the condition is never true.  For the `do...until` we can simply put the conditional at the bottom:
+
+```
+{
+  system print 'alive'
+
+  alive ? !!
+}
+```
+
+
+### Try / Catch
+
+Error handling in Vessel is as simple as breaking with an assocated error object.
+
+```
+! 'error'
+```
+
+Thrown objects can be caught with an 'on error' conditional after expressions:
+
+```
+expression ! {
+
+}
 ```
 
 ## Standard Library
@@ -304,6 +273,6 @@ A number.
 
 ## Additional Notes
 
-Extending the Vessel language is also easy.  It is written in C++.  Check [this page](wiki) for more information.
+Extending the Vessel language is also easy.  It is written in C++.  Check [the wiki](https://github.com/Queatz/vessel/wiki) for more information.
 
 And thanks!  We hope you enjoyed the read. <3
