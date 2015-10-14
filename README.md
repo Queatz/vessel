@@ -88,7 +88,7 @@ material [
   name string
 ]
 ```
-This is a class with a single `string` property called `name`.  Have you noticed the bracets have changed?  Don't freak out yet -  let me explain. Vessel separates data from logic, public from private, cats from dogs.  Nothing is intermixed.
+This is a class with a single `string` property called `name`.  Have you noticed the brackets have changed?  Don't freak out yet -  let me explain. Vessel separates data from logic, public from private, cats from dogs.  Nothing is intermixed.
 
 ```
 material [
@@ -196,7 +196,7 @@ success ?? {
 
 ### Looping
 
-Vessel favors loop and stop commands over blocks.
+Vessel favors loop and break commands over blocks.
 
 ```
 [1, 2, 3] each {
