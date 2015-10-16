@@ -127,7 +127,7 @@ Material [
   name String
 ]
 ```
-This is a class with a single `string` property called `name`.  Have you noticed the brackets have changed?  Don't freak out yet -  let me explain. Vessel separates data from logic, public from private, cats from dogs.  Nothing is intermixed.
+This is a class with a single `String` property called `name`.  Have you noticed the brackets have changed?  Don't freak out yet -  let me explain. Vessel separates data from logic, public from private, cats from dogs.  Nothing is intermixed.
 
 ```
 Material [
@@ -138,7 +138,7 @@ Material [
   }
 }
 ```
-Let's walk through this one.  Brackets hold data. Braces hold logic. Simple.  In our case here, we define a function called `name` that simply returns the name.
+Let's walk through this one. Brackets hold data. Braces hold logic. Brackets are dynamic.  Braces are static. Simple.  In our case here, we define a function called `name` that simply returns the name.
 
 You might be wondering exactly what this function does.  It's a simple getter.  Every block in Vessel is a list of expressions.  The very last expression evaluated in a block is equal to the result of that block.
 
