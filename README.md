@@ -187,9 +187,106 @@ Pine Tree Material {
 
 This is multiple class inheritence.  Again, simple and clean.
 
-## Logic and Scope
+## Objects
 
-Scopes are defined with braces `{ }`. Vessel files are anonymous scopes.
+Classes can be instantiated into objects.  Let's play with some cats.
+
+```
+Cat {
+  name String
+  born Date
+  
+  meow {
+    system print | 'Meow! I, %s, was born on %s.' % [name, born]
+  }
+}
+```
+
+```
+Cat[]
+```
+
+This creates a new object of type `Cat`.
+
+```
+Cat['Kitty']
+```
+
+This creates a new `Cat` with its `name` initiated to `'Kitty'`.  Ironic.
+
+Note that when using a list initiator as above, the order of members as defined in the `Cat` class is mapped to the order supplied in the initiator.
+
+```
+Cat[born: Date from-string '10-10-2015']
+```
+
+For this poor nameless kitty cat we only want to supply a birthday, so we must use a mapped initiator to skip the name.
+
+## Scope
+
+Scopes are defined with braces `{ }`. Vessel files are anonymous scopes.  If a single scope is defined with an equal name to the file's name, it will be collapsed into the file's scope.
+
+App.v
+```
+run {
+
+}
+```
+
+is the same as
+
+App.v
+```
+App {
+  run {
+  
+  }
+}
+```
+
+### Imports
+
+Scopes can depend on other scopes.
+
+```
+:Service
+```
+
+This is a shorthand for:
+
+```
+Service: Service
+```
+
+```
+:my.app.services.MyService
+```
+
+This imports another scope by its absolute path.
+
+```
+App {
+  run {
+    :Service
+  }
+}
+
+App run{Service: MyCustomService}
+```
+
+By importing `Service` within the `run` function, this allows us to inject scope when calling `run`.
+
+See the [Scope Waterfall](https://github.com/Queatz/vessel/wiki/Scope-Waterfall) for more information on how imports are resolved.
+
+### Scope Injection
+
+```
+Controller{service: MyService}
+```
+
+Here we inject a custom service into a new `Controller` object.
+
+## Logic
 
 ### If / Then / Else
 
