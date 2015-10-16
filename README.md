@@ -6,7 +6,7 @@ Vessel explores something new in the land of programming.  Take it for a spin, w
 
 Vessel has a few fundamental underlying concepts that are neccessary to get to understand the language comprehensively. It is expressive. It only has a small subset of reserved characters - no keywords.
 
-Vessel neatly closes the gap between low and high level programming.  It can be used for communicating with graphics cards as well as making beautiful interfaces.
+Vessel neatly closes the gap between low and high level programming.  It can be used for communicating with graphics cards as well as making beautiful user interfaces.
 
 Main.v
 ```
