@@ -258,13 +258,21 @@ This is a shorthand for:
 Service: Service
 ```
 
--
+It could also be referenced by its absolute path:
 
 ```
-:my.app.services.MyService
+:my.app.services.Service
 ```
 
-This imports another scope by its absolute path.
+And this is a shorthand for:
+
+```
+Service: my.app.services.Service
+```
+
+### Scope Injection
+
+There is no requirements where you can import scope.
 
 ```
 App {
@@ -279,14 +287,6 @@ App{run.Service: MyCustomService} run
 By importing `Service` within the `run` function, this allows us to plug in a new `Service` to be used when calling `run` for this `App` object.  See more in [Scope Injection](https://github.com/Queatz/vessel/wiki/Dependency-Injection#scope-injection-static).
 
 See the [Scope Waterfall](https://github.com/Queatz/vessel/wiki/Scope-Waterfall) for more information on how imports are resolved.
-
-### Scope Injection
-
-```
-Controller{service: MyService}
-```
-
-Here we inject a custom service into a new `Controller` object.
 
 ## Logic
 
