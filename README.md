@@ -1,6 +1,6 @@
 # Vessel
 
-Vessel explores something new in land of programming.  Take it for a spin, we think you'll like it.
+Vessel explores something new in the land of programming.  Take it for a spin, we think you'll like it.
 
 ## Thinking in Vessel
 
