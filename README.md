@@ -187,6 +187,28 @@ Pine Tree Material {
 
 This is multiple class inheritence.  Again, simple and clean.
 
+### Arrays
+
+```
+Mat4 {
+  values Double 16
+}
+```
+
+A number after a member definitions indicates that it is repeated x times.
+
+```
+Mat4[].values 8
+```
+
+Accessing individual elements in the array is as simple as calling the array with a number. Here we access the 8th value from a newly created `Mat4` object.
+
+```
+Mat4[].values 8: 22.0
+```
+
+Here it is assigned to 22.
+
 ## Objects
 
 Classes can be instantiated into objects.  Let's play with some cats.
