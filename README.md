@@ -1,6 +1,6 @@
 # Vessel
 
-Vessel is a new way of thinking.  It disbands traditional programming language paradigms in favor of exploring something new.  Take it for a spin, we think you'll like it.
+Vessel explores something new in land of programming.  Take it for a spin, we think you'll like it.
 
 ## Thinking in Vessel
 
