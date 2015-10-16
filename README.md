@@ -23,6 +23,7 @@ Vessel is easy. Designed with writing sentances in mind, it flows unobstructed f
 .    left accessor
 ..   right accessor
 :    assign
+::   const assign
 ?    true conditional
 ??   false conditional
 !    break
