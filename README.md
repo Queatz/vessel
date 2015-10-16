@@ -108,6 +108,10 @@ a|b c
 a b | c
 ```
 
+### Order of Operations
+
+`#` > `( )` > `,` > `?` > `:` > `|`
+
 ## Classes
 
 ```json
