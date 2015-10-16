@@ -76,7 +76,7 @@ a b | c
 ## Classes
 
 ```json
-material {
+Material {
 
 }
 ```
@@ -84,15 +84,15 @@ material {
 This is a class.  Simple and clean.
 
 ```
-material [
-  name string
+Material [
+  name String
 ]
 ```
 This is a class with a single `string` property called `name`.  Have you noticed the brackets have changed?  Don't freak out yet -  let me explain. Vessel separates data from logic, public from private, cats from dogs.  Nothing is intermixed.
 
 ```
-material [
-  name string
+Material [
+  name String
 ] {
   name {
     name
@@ -106,13 +106,13 @@ You might be wondering exactly what this function does.  It's a simple getter.  
 We could make the property private and use this as a getter.  Let's do that and add a setter along the way.
 
 ```
-material [] [
-  name string
+Material [] [
+  name String
 ] {
   name {
     name
   }
-  name string {
+  name String {
     .name: ..
   }
 }
@@ -137,7 +137,7 @@ class | public {
 Let's have look at some more interesting things we can do with classes.
 
 ```
-tree material {
+Tree Material {
 
 }
 ```
@@ -145,7 +145,7 @@ tree material {
 This is class inheritance. Simple and clean.
 
 ```
-pine tree material {
+Pine Tree Material {
 
 }
 ```
@@ -244,32 +244,40 @@ expression ! {
 }
 ```
 
+You can also catch only certain objects by specifying a type:
+
+```
+expression ! NotFoundException {
+
+}
+```
+
 ## Standard Library
 
-### object
+### Object
 
 The base from which all things are.
 
-### list
+### List
 
 A list of objects
 
-### map
+### Map
 
 A map of keys and objects
 
-### string
+### String
 
 A string
 
-### number
+### Number
 
 A number.
 
- * integer
- * float
- * double
- * long
+ * Integer
+ * Float
+ * Double
+ * Long
 
 ## Additional Notes
 
