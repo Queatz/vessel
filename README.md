@@ -8,6 +8,40 @@ Vessel has a few fundamental underlying concepts that are neccessary to get to u
 
 Vessel neatly closes the gap between low and high level programming.  It can be used for communicating with graphics cards as well as making beautiful interfaces.
 
+Main.v
+```
+App['My App', TranslateService['vi']] start
+```
+
+App.v
+```
+App [
+  name String
+] {
+  start {
+     system print | translate string '$1%s started!' % name
+  }
+} services [
+  translate TranslateService
+]
+```
+
+Strings.vi.v
+```
+'$1%s started!': '$1%s bắt đầu!'
+```
+
+TranslateService.v
+```
+TranslateService {
+  string String {
+    Strings has language ? Strings.(language).(..) ?? ..
+  }
+} private [
+  language String
+]
+```
+
 ## Writing in Vessel
 
 Vessel is easy. Designed with writing sentances in mind, it flows unobstructed from your brain to the keyboard.  Writing clear and concisely is heavily promoted through the language's design, with future-proofing built right in from the beginning of your project.
@@ -255,9 +289,13 @@ expression ! NotFoundException {
 
 ## Standard Library
 
+### Scope
+
+The base from which all things are.  All low-level language access happens through this class.
+
 ### Object
 
-The base from which all things are.
+An instanciated scope.
 
 ### List
 
