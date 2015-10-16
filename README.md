@@ -199,7 +199,7 @@ Mat4 {
 }
 ```
 
-A number after a member definitions indicates that it is repeated x times.
+A number after member definitions indicates that it is repeated x times.
 
 ```
 Mat4[].values 8
