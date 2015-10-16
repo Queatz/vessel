@@ -258,6 +258,8 @@ This is a shorthand for:
 Service: Service
 ```
 
+-
+
 ```
 :my.app.services.MyService
 ```
@@ -271,10 +273,10 @@ App {
   }
 }
 
-App run{Service: MyCustomService}
+App{run.Service: MyCustomService} run
 ```
 
-By importing `Service` within the `run` function, this allows us to inject scope when calling `run`.
+By importing `Service` within the `run` function, this allows us to plug in a new `Service` to be used when calling `run` for this `App` object.  See more in [Scope Injection](https://github.com/Queatz/vessel/wiki/Dependency-Injection#scope-injection-static).
 
 See the [Scope Waterfall](https://github.com/Queatz/vessel/wiki/Scope-Waterfall) for more information on how imports are resolved.
 
