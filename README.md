@@ -8,38 +8,21 @@ Vessel has a few fundamental underlying concepts that are neccessary to get to u
 
 Vessel neatly closes the gap between low and high level programming.  It can be used for communicating with graphics cards as well as making beautiful user interfaces.
 
-Main.v
-```
-App['My App', TranslateService['vi']] start
-```
-
 App.v
 ```
-App [
+Animal {
   name String
-] {
-  start {
-     system print | translate string '$1%s started!' % name
-  }
-} services [
-  translate TranslateService
-]
-```
+  tummy: []
 
-Strings.vi.v
-```
-'$1%s started!': '$1%s bắt đầu!'
-```
-
-TranslateService.v
-```
-TranslateService {
-  string String {
-    Strings has language ? Strings.(language).(..) ?? ..
+  eats Animal {
+    tummy add ..
   }
-} private [
-  language String
-]
+}
+
+cat: Animal['Kitty Cat']
+dog: Animal['Gruffy']
+
+cat eats dog
 ```
 
 ## Writing in Vessel
