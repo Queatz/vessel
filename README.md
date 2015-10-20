@@ -4,7 +4,7 @@ Vessel explores something new in the land of programming.  Take it for a spin, w
 
 ## Thinking in Vessel
 
-Vessel has a few fundamental underlying concepts that are neccessary to get to understand the language comprehensively. It is expressive. It only has a small subset of reserved characters - no keywords.
+Vessel has a few fundamental underlying concepts that are necessary to get to understand the language comprehensively. It is expressive. It only has a small subset of reserved characters - no keywords.
 
 Vessel neatly closes the gap between low and high level programming.  It can be used for communicating with graphics cards as well as making beautiful user interfaces.
 
@@ -27,7 +27,7 @@ cat eats dog
 
 ## Writing in Vessel
 
-Vessel is easy. Designed with writing sentances in mind, it flows unobstructed from your brain to the keyboard.  Writing clear and concisely is heavily promoted through the language's design, with future-proofing built right in from the beginning of your project.
+Vessel is easy. Designed with writing sentences in mind, it flows unobstructed from your brain to the keyboard.  Writing clear and concisely is heavily promoted through the language's design, with future-proofing built right in from the beginning of your project.
 
 ### Reserved Characters
 
@@ -142,7 +142,7 @@ Material [] [
 
 Here we specify no public properties, hence the empty definition block.  The second definition block holds private properties.
 
-Because we are assigning a variable, we have to be carful to access it from the parent scope. We do this by preceding the name with a period.
+Because we are assigning a variable, we have to be careful to access it from the parent scope. We do this by preceding the name with a period.
 
 There's also something else interesting in here, that `..`.  In Vessel, expressions have access to their left and right counterparts.  You can think of the left counterpart (`.`) as a traditional reference to `this`, and the right counterpart (`..`) as a single argument. In this setter we're assigning the `name` property of `this` to the right counterpart, or the argument, which is defined as a `string`.
 
@@ -172,7 +172,7 @@ Pine Tree Material {
 }
 ```
 
-This is multiple class inheritence.  Again, simple and clean.
+This is multiple class inheritance.  Again, simple and clean.
 
 ### Arrays
 
@@ -204,7 +204,7 @@ Classes can be instantiated into objects.  Let's play with some cats.
 Cat {
   name String
   born Date
-  
+
   meow {
     system print | 'Meow! I, %s, was born on %s.' % [name, born]
   }
@@ -248,7 +248,7 @@ App.v
 ```
 App {
   run {
-  
+
   }
 }
 ```
@@ -324,7 +324,7 @@ a ? b ?? c ? d ?? e
 A practical if block might look like:
 ```
 success ? {
-  
+
 } ?? {
 
 }
@@ -334,7 +334,7 @@ Another example, if you only need a false conditional block:
 ```
 success ?? {
   system print 'error'
-} 
+}
 ```
 
 ### Looping
@@ -352,8 +352,8 @@ Here, the elements are iterated in an object-oriented fashion.
 
 ```
 {
-  alive ?? ! 
-  
+  alive ?? !
+
   system print 'alive'
 
   !!
@@ -403,7 +403,7 @@ The base from which all things are.  All low-level language access happens throu
 
 ### Object
 
-An instanciated scope.
+An instantiated scope.
 
 ### List
 
