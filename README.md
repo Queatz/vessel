@@ -2,6 +2,23 @@
 
 Vessel explores something new in the land of programming.  Take it for a spin, we think you'll like it.
 
+Vessel emerged to solve common language-centric problems when scaling projects in Python, Java, and C++.  It combines the readability and ease of coding in Python, with the explicitness and performance of Java and C++.
+
+In summary, Vessel cares about:
+
+* Explicitness
+* Correctness
+* Performance
+* Static typing
+* Speed of development
+* Readability
+* Abstracting
+* Decoupling
+* Modularity
+* Scalability
+* Parallelism
+* IDE safe
+
 ## Thinking in Vessel
 
 Vessel has a few fundamental underlying concepts that are necessary to get to understand the language comprehensively. It is expressive. It only has a small subset of reserved characters - no keywords.
