@@ -75,7 +75,7 @@ The following is exactly the same as above:
 
 `#` > `( )` > `,` > `?` > `:`
 
-## Classes
+## Classes and Functions
 
 ```json
 Material {
@@ -96,25 +96,25 @@ This is a class with a single `String` property called `name`.  Have you noticed
 Material [
   name String
 ] {
-  name {
+  getName {
     name
   }
 }
 ```
-Let's walk through this one. Brackets hold data. Braces hold logic. Brackets are dynamic.  Braces are static. Simple.  In our case here, we define a function called `name` that simply returns the name.
+Let's walk through this one. Brackets hold data. Braces hold logic. Brackets are dynamic.  Braces are static. Simple.  In our case here, we define a function called `getName` that simply returns the name.
 
-You might be wondering exactly what this function does.  It's a simple getter.  Every block in Vessel is a list of expressions.  The very last expression evaluated in a block is equal to the result of that block.
+Every block in Vessel is a list of expressions.  The very last expression evaluated in a block is equal to the return of that block.
 
-We could make the property private and use this as a getter.  Let's do that and add a setter along the way.
+We could make the property private and use this function as the only way to read the name.  Let's do that and add a function to set the name as well.
 
 ```
 Material [] [
   name String
 ] {
-  name {
+  getName {
     name
   }
-  name String {
+  setName String {
     .name: ..
   }
 }
@@ -122,7 +122,7 @@ Material [] [
 
 Here we specify no public properties, hence the empty definition block.  The second definition block holds private properties.
 
-Because we are assigning a variable, we have to be careful to access it from the parent scope. We do this by preceding the name with a period.
+Because we are assigning a variable in the `setName` function, we have to be careful to access it from the context scope (left accessor.) We do this by preceding the name with a period.
 
 There's also something else interesting in here, that `..`.  In Vessel, expressions have access to their left and right counterparts.  You can think of the left counterpart (`.`) as a traditional reference to `this`, and the right counterpart (`..`) as a single argument. In this setter we're assigning the `name` property of `this` to the right counterpart, or the argument, which is defined as a `string`.
 
