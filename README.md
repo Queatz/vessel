@@ -35,7 +35,6 @@ Vessel is easy. Designed with writing sentences in mind, it flows unobstructed f
 { }  logical scope block
 [ ]  object
 ( )  expression grouping
-|    glue or separate expression
 ,    statement separator
 .    left accessor
 ..   right accessor
@@ -72,28 +71,9 @@ The following is exactly the same as above:
 ((a b c) d e)
 ```
 
-You can use the glue and separate selector to help write cleaner expressions without all the parenthesis.  Again, this is equivalent to the above:
-
-```
-a
-a|b
-a b c
-a b c | d
-a b c | d | e
-```
-
-Note that `a b c | d e` would actually be `(a b c) (d e)`.
-
-Gluing and separating is especially useful when you want to reverse the order of evaluation, such as if you want `(a b) c` "c of b of a":
-
-```
-a|b c  
-a b | c
-```
-
 ### Order of Operations
 
-`#` > `( )` > `,` > `?` > `:` > `|`
+`#` > `( )` > `,` > `?` > `:`
 
 ## Classes
 
@@ -149,7 +129,7 @@ There's also something else interesting in here, that `..`.  In Vessel, expressi
 You can also name these data and logic groupings which can come in handy when doing reflection.
 
 ```
-class | public {
+class {
 
 } parsing {
   # various methods related to parsing this class
@@ -206,7 +186,7 @@ Cat {
   born Date
 
   meow {
-    system print | 'Meow! I, %s, was born on %s.' % [name, born]
+    system print ('Meow! I, %s, was born on %s.' % [name, born])
   }
 }
 ```
