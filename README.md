@@ -8,6 +8,7 @@ In summary, Vessel cares about:
 
 * Explicitness
 * Correctness
+* Repeatability
 * Performance
 * Static typing
 * Speed of development
