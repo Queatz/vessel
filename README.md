@@ -8,16 +8,19 @@ In summary, Vessel cares about:
 
 * Explicitness
 * Correctness
+* Succinctness
 * Repeatability
-* Performance
-* Static typing
-* Speed of development
 * Readability
+
 * Abstracting
 * Decoupling
 * Modularity
 * Scalability
 * Parallelism
+
+* Static typing
+* Performance
+* Speed of development
 * IDE safe
 
 ## Thinking in Vessel
