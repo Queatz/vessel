@@ -6,22 +6,20 @@ Vessel emerged to solve common language-centric problems when scaling projects i
 
 In summary, Vessel cares about:
 
-* Explicitness
-* Correctness
 * Succinctness
-* Repeatability
-* Readability
-
+  * Explicitness
+  * Correctness
+  * Repeatability
+  * Static typing
 * Abstracting
-* Decoupling
-* Modularity
-* Scalability
-* Parallelism
-
-* Static typing
-* Performance
+  * Decoupling
+  * Modularity
+  * Scalability
+  * Parallelism
 * Speed of development
-* IDE safe
+  * Readability
+  * IDE safe
+* Performance
 
 ## Thinking in Vessel
 
