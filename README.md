@@ -348,26 +348,30 @@ Vessel favors loop and break commands over blocks.
 
 Here, the elements are iterated in an object-oriented fashion.
 
-
 ```
-{
-  alive ?? !
-
-  system print 'alive'
-
-  !!
-}
+x: 0, {
+ 
+} while { x++, x < 100 }
 ```
 
-Here we are using the loop command `!!` to return to the beginning of the block.  We check and break at the beginning because we don't want this block running at all if the condition is never true.  For the `do...until` we can simply put the conditional at the bottom:
+A traditional for loop.
 
 ```
 {
   system print 'alive'
-
-  alive ? !!
-}
+} while { alive }
 ```
+
+This is a while loop that evaluates `alive` before each loop.
+
+```
+{
+  system print 'alive'
+
+} until { !alive }
+```
+
+This is a `do...until` loop that will always run at least once.
 
 
 ### Try / Catch
