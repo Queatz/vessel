@@ -69,9 +69,6 @@ Vessel is easy. Designed with writing sentences in mind, it flows unobstructed f
 
 ## Expressions
 
-By default, expressions are greedy groups of up to a maximum of three parts: left, middle, and right. Or more plainly: context, operator, and argument.
-
-All these are valid code with their associated meanings:
 ```
 a           # just a
 a b         # call b of a
@@ -80,7 +77,9 @@ a b c d     # call d of (call b of a with c)
 a b c d e   # call d of (call b of a with c) with e
 ```
 
-The following is exactly the same as above:
+By default, expressions are greedy groups of up to a maximum of three parts: left, middle, and right. Or more plainly: context, operator, and argument.
+
+All the above are valid code with their associated meanings.
 
 ```
 (a)
@@ -89,6 +88,14 @@ The following is exactly the same as above:
 ((a b c) d)
 ((a b c) d e)
 ```
+
+This is exactly the same as above.
+
+```
+(a, b, c)
+```
+
+This evaluates to `c` since the last value in an expression is the result of that expression.
 
 ### Order of Operations
 
