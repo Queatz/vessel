@@ -17,6 +17,8 @@ In summary, Vessel cares about:
   * Scalability
   * Parallelism
 * Speed of development
+  * Language
+  * Understandability
   * Readability
   * IDE safe
 * Performance
@@ -24,6 +26,8 @@ In summary, Vessel cares about:
 ## Thinking in Vessel
 
 Vessel has a few fundamental underlying concepts that are necessary to get to understand the language comprehensively. It is expressive. It only has a small subset of reserved characters - no keywords.
+
+Vessel cares about **the language** of large projects.  This means that when a person who's never touched a codebase before jumps in for the first time and lands on any random line of code, the time it takes for this fellow to understand what's going on there should be as minimal as possible.  This is achieved through bringing abstractions to the forefront and strictly limiting the visibility of a single scope, meaning one must trace flow incrementally and will never come across some crazy chasm that will be difficult to figure out.  Vessel doesn't come with support for crazy chasms. Another way to think of it is that Vessel allows you to *write code as if you were explaining to someone else what's going on here.*
 
 Vessel neatly closes the gap between low and high level programming.  It can be used for communicating with graphics cards as well as making beautiful user interfaces.
 
