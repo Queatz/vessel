@@ -20,6 +20,7 @@ In summary, Vessel cares about:
   * Repeatability
   * Static typing
 * Abstracting
+  * Pluggability
   * Decoupling
   * Modularity
   * Scalability
