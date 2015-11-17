@@ -2,6 +2,8 @@
 
 Vessel explores something new in the land of programming.  Take it for a spin, we think you'll like it.
 
+See [Why Vessel?](https://github.com/Queatz/vessel/wiki/Why-Vessel%3F) and [Guess the Number](https://github.com/Queatz/vessel/wiki/Example:-Guess-the-Number) to skip right to some examples.
+
 ## Thinking in Vessel
 
 Vessel has a few fundamental underlying concepts that are necessary to get to understand the language comprehensively. It is expressive. It only has a small subset of reserved characters - no keywords.
