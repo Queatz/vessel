@@ -303,22 +303,24 @@ See the [Scope Waterfall](https://github.com/Queatz/vessel/wiki/Scope-Waterfall)
 
 ### If / Then / Else
 
-b if a
+A good way to think of conditionals in Vessel is with an implied "if" at the beginning of conditions, with `?` spoken as "then" and `??` spoken as "else."
+
+if a then b
 ```
 a ? b
 ```
 
-b if a else c
+if a then b else c
 ```
 a ? b ?? c
 ```
 
-b if a else d if c
+if a then b else if c then d
 ```
 a ? b ?? c ? d
 ```
 
-b if a else d if c else e
+if a then b else if c then d else e
 ```
 a ? b ?? c ? d ?? e
 ```
