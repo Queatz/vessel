@@ -23,7 +23,7 @@ It shouldn't ever be easier to write equivalent logic two times.  Abstract and r
 Programming languages should help their counterpart out by being clean, concise, and readable.  They should encourage long-term principles from the beginning and cause the programmer to write beautiful code without effort.
 
 
-App.v
+**App.v**
 ```
 Animal {
   name String
