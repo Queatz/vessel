@@ -6,33 +6,21 @@ See [Why Vessel?](https://github.com/Queatz/vessel/wiki/Why-Vessel%3F) and [Gues
 
 ## Thinking in Vessel
 
-Vessel has a few fundamental underlying concepts that are necessary to get to understand the language comprehensively. It is expressive. It only has a small subset of reserved characters - no keywords.
+**Vessel cares about: Language** 
 
-Vessel cares about **the language of large projects.**  This means that when a person who's never touched a codebase before jumps in for the first time and lands on any random line of code, the time it takes for this fellow to understand what's going on there should be as minimal as possible.  This is achieved through bringing abstractions to the forefront and strictly limiting the visibility of a single scope, meaning one must trace flow incrementally and will never come across some crazy chasm that will be difficult to figure out.  Vessel doesn't come with support for crazy chasms. Another way to think of it is that Vessel allows you to *write code as if you were explaining to someone else what's going on here.*
+Otherwise known as: *Explain Yourself*
 
-Vessel neatly closes the gap between low and high level programming.  It can be used for communicating with graphics cards as well as making beautiful user interfaces.
+A new set of eyes should always be be able to easily trace and understand what's happening in any line of code.  This is achieved with static typing, clear referencing, and - no magic allowed.
 
-Vessel emerged to solve common language-centric problems when scaling projects in Python, Java, and C++.  It combines the readability and ease of coding in Python, with the explicitness and performance of Java and C++.
+**Vessel cares about: Abstractions** 
 
-In summary, Vessel cares about:
+Otherwise known as: *Don't Repeat Yourself*
 
-* Succinctness
-  * Explicitness
-  * Correctness
-  * Repeatability
-  * Static typing
-* Abstracting
-  * Pluggability
-  * Decoupling
-  * Modularity
-  * Scalability
-  * Parallelism
-* Speed of development
-  * Language
-  * Understandability
-  * Readability
-  * IDE safe
-* Performance
+It shouldn't ever be easier to write equivalent logic two times.  Abstract and reference it.  A codebase should be able to scale up without amounting technical debt. Everything is decoupled and easy to hot swap.  This is made even cleaner with built-in dependency injection. See [Dependency Injection](https://github.com/Queatz/vessel/wiki/Dependency-Injection)
+
+**Vessel cares about: You**
+
+Programming languages should help their counterpart out by being clean, concise, and readable.  They should encourage long-term principles from the beginning and cause the programmer to write beautiful code without effort.
 
 
 App.v
