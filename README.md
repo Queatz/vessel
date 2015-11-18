@@ -373,7 +373,7 @@ This is a while loop that evaluates `alive` before each loop.
 {
   system print 'alive'
 
-} until { !alive }
+} while { alive }
 ```
 
 This is a `do...until` loop that will always run at least once.
