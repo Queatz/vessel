@@ -1,6 +1,6 @@
 # Vessel
 
-Vessel explores something new in the land of programming.  Take it for a spin, we think you'll like it.
+Vessel is an open source programming language specification.  Take it for a spin, we think you'll like it.
 
 See [Why Vessel?](https://github.com/Queatz/vessel/wiki/Why-Vessel%3F), [Guess the Number](https://github.com/Queatz/vessel/wiki/Example:-Guess-the-Number), and [Greet Me](https://github.com/Queatz/vessel/wiki/Example:-Greet-Me) to skip right to some examples.
 
