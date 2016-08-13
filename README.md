@@ -16,7 +16,7 @@ A new set of eyes should always be be able to easily trace and understand what's
 
 Otherwise known as: *Don't Repeat Yourself*
 
-It shouldn't ever be easier to write equivalent logic two times.  Abstract and reference it.  A codebase should be able to scale up without amounting technical debt. Everything is decoupled and easy to hot swap.  This is made even cleaner with built-in dependency injection. See [Dependency Injection](https://github.com/Queatz/vessel/wiki/Dependency-Injection)
+It shouldn't ever be easier to write equivalent logic two times.  Abstract and reference it. Single source of truth, always, no exceptions, period.  A codebase should be able to scale up without amounting technical debt. Everything is decoupled and easy to hot swap.  This is made even cleaner with built-in dependency injection. See [Dependency Injection](https://github.com/Queatz/vessel/wiki/Dependency-Injection)
 
 **Vessel cares about: You**
 
