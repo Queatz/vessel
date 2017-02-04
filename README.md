@@ -1,6 +1,6 @@
 # Vessel
 
-Vessel is an open source programming language specification.  Take it for a spin, we think you'll like it.
+Vessel is to programming languages as assembly is to hardware. It provides an abstraction on top of domain-specific languages such as C++, JavaScript, Python, and other high- and low-level languages, as well as scripting and templating languages such as HTML and CSS. It provides a single conceptual approach that compiles into domain-specific targets. Take it for a spin, we think you'll like it.
 
 See [Why Vessel?](https://github.com/Queatz/vessel/wiki/Why-Vessel%3F), [Guess the Number](https://github.com/Queatz/vessel/wiki/Example:-Guess-the-Number), and [Greet Me](https://github.com/Queatz/vessel/wiki/Example:-Greet-Me) to skip right to some examples.
 
